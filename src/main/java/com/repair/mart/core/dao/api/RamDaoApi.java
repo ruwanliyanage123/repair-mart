@@ -28,9 +28,10 @@ public interface RamDaoApi {
     /**
      * Update Ram by id
      * @param id id of the ram
+     * @param ram ram need to update
      * @return updated ram
      */
-    Ram updateRam(Long id);
+    Ram updateRam(Long id, Ram ram);
 
     /**
      * Delete ram by id
