@@ -13,5 +13,31 @@
         public ResponseEntity<Ram> createRam(@RequestBody Ram ram) {
             return ResponseEntity.ok(ramService.createRam(ram));
         }
-
     }
+
+
+# singleton pattern
+    To create a singleton class we have several ways one of them as follows.
+    
+    (5)
+    public final class InternalDatabase {
+        (1)
+        private InternalDatabase(){
+        }
+        
+        (2)
+        private static final class InternalDatabaseLazyLoader{
+            (3)
+            public static final InternalDatabase INSTANCE = new InternalDatabase();
+        }
+        (4)
+        public static InternalDatabase getInstance(){
+            return InternalDatabaseLazyLoader.INSTANCE;
+        }
+    }
+ 
+    (1) - Keep the constructor as private. That will restrict to a single object
+    (2) - Use a static class to create the one and only instance of the class 
+    (3) - Create the single objct inside the static
+    (4) - Create a static method to share the created single object.
+    (5) - Better to keep the class as final otherwise if some class try to extend that class cannot acces the super constor
