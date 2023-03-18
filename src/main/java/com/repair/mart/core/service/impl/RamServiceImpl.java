@@ -2,13 +2,13 @@ package com.repair.mart.core.service.impl;
 
 import com.repair.mart.core.dao.api.RamDaoApi;
 import com.repair.mart.core.dto.Ram;
-import com.repair.mart.core.service.api.RamService;
+import com.repair.mart.core.service.api.RamServiceApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 
-public class RamServiceImpl implements RamService {
+public class RamServiceImpl implements RamServiceApi {
     @Autowired
     @Qualifier("com.repair.mart.core.dao.impl.RamDaoImpl")
     private RamDaoApi ramDao;

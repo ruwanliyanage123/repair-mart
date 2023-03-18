@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.repair.mart.core.dao.api.RamDaoApi;
 import com.repair.mart.core.dao.impl.RamDaoImpl;
+import com.repair.mart.core.service.api.RamServiceApi;
+import com.repair.mart.core.service.impl.RamServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +31,11 @@ public class ApplicationConfigurations implements WebMvcConfigurer {
     @Bean("com.repair.mart.core.dao.impl.RamDaoImpl")
     public RamDaoApi ramDao(){
         return new RamDaoImpl();
+    }
+
+    @Bean("com.repair.mart.core.service.impl.RamServiceImpl")
+    public RamServiceApi ramService(){
+        return new RamServiceImpl();
     }
 }
 

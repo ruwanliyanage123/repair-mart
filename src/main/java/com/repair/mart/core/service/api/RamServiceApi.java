@@ -4,7 +4,7 @@ import com.repair.mart.core.dto.Ram;
 
 import java.util.List;
 
-public interface RamService {
+public interface RamServiceApi {
     /**
      * Get all Rams
      * @return all rams
