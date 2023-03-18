@@ -2,6 +2,9 @@ package com.repair.mart.core.config;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.repair.mart.core.dao.api.RamDaoApi;
+import com.repair.mart.core.dao.impl.RamDaoImpl;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -21,6 +24,11 @@ public class ApplicationConfigurations implements WebMvcConfigurer {
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setObjectMapper(new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false));
         converters.add(converter);
+    }
+
+    @Bean("com.repair.mart.core.dao.impl.RamDaoImpl")
+    public RamDaoApi ramDao(){
+        return new RamDaoImpl();
     }
 }
 
