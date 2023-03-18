@@ -15,6 +15,15 @@
         }
     }
 
+# @PathVariable
+
+    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Ram> getRamById(@PathVariable Long id) {
+        return ResponseEntity.ok(ramService.getRamById(id));
+    }
+
+    no need to send the L for the long in url. can use without L as http://localhost:8080/ram/3
+
 
 # singleton pattern
     To create a singleton class we have several ways one of them as follows.
