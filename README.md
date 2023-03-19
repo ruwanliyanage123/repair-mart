@@ -50,3 +50,14 @@
     (3) - Create the single objct inside the static
     (4) - Create a static method to share the created single object.
     (5) - Better to keep the class as final otherwise if some class try to extend that class cannot acces the super constor
+
+# @CrossOrigin
+    - CORS is a security feature implemented by web browsers that restricts web pages from making requests to a different domain than the one that served the web page.
+    - You need to configure your backend API server to allow cross-origin requests from your Angular application. 
+    - You can do this by adding the @CrossOrigin annotation on your REST endpoint in your Spring controller.
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RestController
+    @RequestMapping("/ram")
+    public class RamRestController {
+    }
