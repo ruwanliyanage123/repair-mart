@@ -26,7 +26,7 @@
 
 
 # singleton pattern
-    To create a singleton class we have several ways one of them as follows.
+    To create a singleton class we have several ways one of them as follows. This is a way to lazy loading.
     
     (5)
     public final class InternalDatabase {
